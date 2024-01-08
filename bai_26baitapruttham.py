@@ -18,15 +18,16 @@ while True:
         Set.add(n)
     elif luachon == 2:
         m = int(input("Nhập vào mã số dự thưởng cần xóa: "))
-        Set.discard(m)
+        if m in Set:
+            Set.remove(m)
+        else:
+            print("Mã số dự thưởng không tồn tại trong thùng phiếu.")
     elif luachon == 3:
         if len(Set) > 0:
-            index = random.randint(0,len(Set))
-            print("Vị trí trúng thưởng là: "+str(index))
-            for i in range(len(Set)) :
-                if(i==index):
-                    print("Chúc mừng mã số "+ Set[i]+" đã trúng thưởng")
-                    Set.discard(Set[i])
+            index = random.randint(0, len(Set) - 1)
+            winner = list(Set)[index]
+            print("Chúc mừng mã số " + str(winner) + " đã trúng thưởng")
+            Set.discard(winner)
         else:
             print("Không có mã số dự thưởng để quay.")
     else:
