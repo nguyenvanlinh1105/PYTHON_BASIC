@@ -105,3 +105,13 @@ x = tinhTong(n,my_list)
 print("tong day so là: "+str(x))
 
 
+
+
+
+
+
+
+
+
+
+
